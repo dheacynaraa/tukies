@@ -20,9 +20,36 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes floating-tasty {
+  0%,
+  100% {
+    transform: rotate(-7deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(-7deg) translateY(-12px);
+  }
+}
+
+@keyframes floating-crunchy {
+  0%,
+  100% {
+    transform: rotate(8deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(8deg) translateY(-12px);
+  }
+}
+
 body {
   margin: 0;
   background: var(--secondary);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 2px,
+    rgba(147, 72, 39, 0.03) 2px,
+    rgba(147, 72, 39, 0.03) 4px
+  );
   color: var(--tertiary);
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
@@ -52,7 +79,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(107, 63, 34, 0.08);
+  box-shadow: 0 2px 8px rgba(211, 95, 19, 0.08);
 }
 
 .nav-container {
@@ -115,7 +142,7 @@ nav a.active {
   background: var(--primary);
   color: var(--white);
   border: 2px dashed var(--white);
-  box-shadow: 0 3px 0 rgba(147, 72, 39, 0.2);
+  box-shadow: 0 3px 0 rgba(255, 165, 92, 0.637);
   transform: translateY(-1px);
   font-weight: 600;
 }
@@ -124,4 +151,219 @@ nav a.active span {
   display: inline-block;
 }
 
+/* === SECTION === */
+section {
+  min-height: 100vh;
+}
 
+/* === BUTTON === */
+.btn {
+  background: var(--primary);
+  color: var(--white);
+  border: 2px dashed rgba(255, 165, 92, 0.774);
+  transform: translateY(-1px);
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  padding: 8px 22px;
+  border-radius: 20px;
+  box-shadow: 0 3px 0 rgba(255, 165, 92, 0.637);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: var(--tertiary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(147, 72, 39, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 0 rgba(147, 72, 39, 0.3);
+}
+
+.btn.small {
+  font-size: 10px;
+  padding: 6px 14px;
+}
+
+/* === HERO === */
+.hero {
+  padding: 55px 0;
+  overflow: hidden;
+}
+
+.hero-container {
+  min-height: 280px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.hero-text {
+  position: relative;
+}
+
+.hero-heart {
+  position: absolute;
+  left: -50px;
+  top: 20px;
+  color: var(--primary);
+  font-size: 24px;
+}
+
+.hero-text h1 {
+  color: var(--primary);
+  font-family: "Fredoka";
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 0.95;
+  margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+  color: var(--tertiary);
+  font-size: 48px;
+}
+
+.hero-description {
+  width: 410px;
+  background: var(--highlight);
+  border: 1px solid #eadbc9;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* === HERO IMAGE === */
+.hero-image {
+  height: 280px;
+  position: relative;
+}
+
+.hero-blob {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: var(--primary);
+  border-radius: 48% 52% 60% 40%;
+  left: 45px;
+  top: 5px;
+  transform: rotate(-28deg);
+}
+
+.star {
+  position: absolute;
+  right: 55px;
+  top: 10px;
+  color: var(--primary);
+  font-size: 37px;
+}
+
+.hero-slash {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  width: 38px;
+  height: 10px;
+  background: var(--primary);
+  transform: rotate(47deg);
+}
+
+.hero-product {
+  position: absolute;
+  right: 15px;
+  top: 50px;
+  width: 315px;
+  height: 200px;
+  overflow: hidden;
+  border: 7px solid white;
+  border-radius: 50%;
+  box-shadow: 0 8px 15px rgba(107, 63, 34, 0.2);
+  transform: rotate(-2deg);
+}
+
+.hero-product img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sticker {
+  position: absolute;
+  background: #fffaf2;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: "Fredoka", cursive;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.tasty {
+  border: 2px solid var(--tertiary);
+  color: var(--tertiary);
+  left: 180px;
+  bottom: 50px;
+  transform: rotate(-7deg);
+  box-shadow: 0 3px 0 var(--tertiary);
+  animation: floating-tasty 3s ease-in-out infinite;
+}
+
+.crunchy {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  right: 0;
+  top: 102px;
+  transform: rotate(8deg);
+  box-shadow: 0 3px 0 var(--primary);
+  animation: floating-crunchy 3s ease-in-out infinite;
+}
+
+.wave {
+  margin-top: 100px;
+  height: 100px;
+  background: var(--peach);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 80%,
+    97% 92%,
+    94% 82%,
+    91% 93%,
+    88% 82%,
+    85% 92%,
+    82% 82%,
+    79% 94%,
+    76% 83%,
+    73% 92%,
+    70% 82%,
+    67% 93%,
+    64% 82%,
+    61% 92%,
+    58% 81%,
+    55% 93%,
+    52% 82%,
+    49% 92%,
+    46% 81%,
+    43% 93%,
+    40% 82%,
+    37% 92%,
+    34% 81%,
+    31% 93%,
+    28% 82%,
+    25% 92%,
+    22% 81%,
+    19% 93%,
+    16% 82%,
+    13% 92%,
+    10% 81%,
+    7% 93%,
+    4% 82%,
+    0 92%
+  );
+}
