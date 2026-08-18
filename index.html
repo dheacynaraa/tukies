@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tukies — Getuk Cookies</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    />
+
     <!-- Style CSS -->
     <link rel="stylesheet" href="style.css" />
 
@@ -17,46 +26,40 @@
 
   <body>
     <!-- Header -->
-     <header>
-        <a href="#home"><img src="assets/tukies.png" alt="logo" width="110" height="60"></a>
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="#home" class="logo"
+          ><img src="assets/logo.png" alt="tukies"
+        /></a>
 
-        <nav>
-            <a href="#home">Beranda</a>
-            <a href="#varian">Varian</a>
-            <a href="#about">Tentang</a>
-            <a href="#review">Ulasan</a>
+        <nav id="navMenu">
+          <a href="#home" class="active"><span>Beranda</span></a>
+          <a href="#varian"><span>Varian</span></a>
+          <a href="#about"><span>Tentang</span></a>
+          <a href="#review"><span>Ulasan</span></a>
         </nav>
-     </header>
+      </div>
+    </header>
 
-     <!-- Main Content -->
-     <main>
-        <!-- Home Section -->
-         <section id="home">
+    <!-- Main Content -->
+    <main>
+      <!-- Home Section -->
+      <section id="home"></section>
 
-         </section>
+      <!-- Varian Section -->
+      <section id="varian"></section>
 
-         <!-- Varian Section -->
-          <section id="varian">
+      <!-- About Section -->
+      <section id="about"></section>
 
-          </section>
+      <!-- Review Section -->
+      <section id="review"></section>
 
-          <!-- About Section -->
-           <section id="about">
+      <!-- Footer Section -->
+      <footer></footer>
+    </main>
 
-           </section>
-
-           <!-- Review Section -->
-            <section id="review">
-
-            </section>
-
-            <!-- Footer Section -->
-             <footer>
- 
-             </footer>
-     </main>
-
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

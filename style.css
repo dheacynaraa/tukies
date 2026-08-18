@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #e67a26;
+  --secondary: #ffeede;
+  --tertiary: #934827;
+  --highlight: #fff9ee;
+
+  --white: #ffffff;
+  --peach: #e5c0aa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--secondary);
+  color: var(--tertiary);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: calc(100% - 80px);
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* === NAVBAR === */
+.navbar {
+  height: 72px;
+  background: var(--highlight);
+  border-bottom: 1px solid var(--peach);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(107, 63, 34, 0.08);
+}
+
+.nav-container {
+  width: calc(100% - 80px);
+  max-width: 980px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 50px;
+  height: 45px;
+  object-fit: contain;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--tertiary);
+  border-radius: 30px;
+  white-space: nowrap;
+  transition:
+    background-color 0.28s ease,
+    color 0.28s ease,
+    box-shadow 0.28s ease,
+    transform 0.28s ease;
+}
+
+nav a span {
+  display: inline-block;
+}
+
+nav a:hover {
+  background: rgba(230, 122, 38, 0.08);
+}
+
+nav a.active {
+  background: var(--primary);
+  color: var(--white);
+  border: 2px dashed var(--white);
+  box-shadow: 0 3px 0 rgba(147, 72, 39, 0.2);
+  transform: translateY(-1px);
+  font-weight: 600;
+}
+
+nav a.active span {
+  display: inline-block;
+}
+
+
