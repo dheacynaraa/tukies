@@ -1285,5 +1285,156 @@ section {
   transform: rotate(15deg);
 }
 
+/* === CTA BANNER SECTION === */
+.cta-banner {
+  background: var(--primary);
+  position: relative;
+  padding: 70px 0 80px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* Sawtooth / Zig-zag top border decoration */
+.cta-sawtooth-top {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: var(--secondary);
+  clip-path: polygon(
+    0% 0%, 2% 100%, 4% 0%, 6% 100%, 8% 0%, 10% 100%,
+    12% 0%, 14% 100%, 16% 0%, 18% 100%, 20% 0%, 22% 100%,
+    24% 0%, 26% 100%, 28% 0%, 30% 100%, 32% 0%, 34% 100%,
+    36% 0%, 38% 100%, 40% 0%, 42% 100%, 44% 0%, 46% 100%,
+    48% 0%, 50% 100%, 52% 0%, 54% 100%, 56% 0%, 58% 100%,
+    60% 0%, 62% 100%, 64% 0%, 66% 100%, 68% 0%, 70% 100%,
+    72% 0%, 74% 100%, 76% 0%, 78% 100%, 80% 0%, 82% 100%,
+    84% 0%, 86% 100%, 88% 0%, 90% 100%, 92% 0%, 94% 100%,
+    96% 0%, 98% 100%, 100% 0%
+  );
+  z-index: 10;
+}
+
+.cta-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 980px;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-text {
+  position: relative;
+  color: #ffffff;
+  max-width: 520px;
+}
+
+.cta-star-doodle {
+  position: absolute;
+  top: -24px;
+  left: -28px;
+  color: #ffffff;
+  font-size: 24px;
+  opacity: 0.95;
+  transform: rotate(-15deg);
+}
+
+.cta-text h2 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-text p {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 28px;
+  letter-spacing: 0.2px;
+}
+
+.btn-cta {
+  background: #fff8ef;
+  color: var(--primary);
+  font-family: "Fredoka", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 36px;
+  border-radius: 30px;
+  border: 2px dashed var(--primary);
+  box-shadow: 0 5px 0 rgba(147, 72, 39, 0.35);
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-cta:hover {
+  background: #ffffff;
+  color: var(--tertiary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Photo Right */
+.cta-photo-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.cta-polaroid {
+  background: #ffffff;
+  padding: 12px 12px 32px 12px;
+  border-radius: 4px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  transform: rotate(4deg);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.cta-polaroid:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+.cta-tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55px;
+  height: 20px;
+  background: rgba(245, 235, 220, 0.75);
+  border-radius: 2px;
+  z-index: 5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.cta-polaroid img {
+  width: 270px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+.cta-heart-decor {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff8ef;
+  font-size: 34px;
+  opacity: 0.95;
+}
+
+
 
 
