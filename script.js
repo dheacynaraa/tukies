@@ -31,17 +31,16 @@ navLinks.forEach((link) => {
 // Create an observer to detect which section is currently visible
 const sectionObserver = new IntersectionObserver(
   (entries) => {
-    const visibleEntry = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-    if (visibleEntry) {
-      setActiveLink(visibleEntry.target.id);
-    }
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setActiveLink(entry.target.id);
+      }
+    });
   },
   {
     root: null,
-    threshold: [0.35, 0.6, 0.8],
+    rootMargin: "-40% 0px -50% 0px",
+    threshold: 0,
   },
 );
 
