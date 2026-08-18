@@ -1087,11 +1087,11 @@ section {
 
 /* Layout Showcase */
 .review-showcase {
-  max-width: 960px;
+  max-width: 1020px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 300px 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr 280px 1fr;
+  gap: 52px;
   align-items: center;
 }
 
@@ -1226,7 +1226,7 @@ section {
   color: var(--tertiary);
 }
 
-/* Center Photo Polaroid */
+/* Review Photo */
 .review-photo-wrap {
   position: relative;
   display: flex;
@@ -1286,4 +1286,4 @@ section {
 }
 
 
-
+

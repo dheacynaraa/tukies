@@ -28,21 +28,27 @@ navLinks.forEach((link) => {
   });
 });
 
-// Create an observer to detect which section is currently visible
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        setActiveLink(entry.target.id);
-      }
-    });
-  },
-  {
-    root: null,
-    rootMargin: "-40% 0px -50% 0px",
-    threshold: 0,
-  },
-);
+// Update active link based on scroll position & bottom detection
+const updateActiveOnScroll = () => {
+  // If reached bottom of page, activate last section (Review/Ulasan)
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 80) {
+    const lastSection = sections[sections.length - 1];
+    if (lastSection) {
+      setActiveLink(lastSection.id);
+      return;
+    }
+  }
 
-// Observe every section on the page
-sections.forEach((section) => sectionObserver.observe(section));
+  const scrollPosition = window.scrollY + window.innerHeight / 3;
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.offsetHeight;
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+      setActiveLink(section.id);
+    }
+  });
+};
+
+window.addEventListener("scroll", updateActiveOnScroll);
+window.addEventListener("load", updateActiveOnScroll);
+
