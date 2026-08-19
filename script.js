@@ -30,11 +30,11 @@ navLinks.forEach((link) => {
 
 // Update active link based on scroll position & bottom detection
 const updateActiveOnScroll = () => {
-  // If reached bottom of page, activate last section (Review/Ulasan)
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 80) {
-    const lastSection = sections[sections.length - 1];
-    if (lastSection) {
-      setActiveLink(lastSection.id);
+  // Keep Ulasan active while the footer is visible.
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 80) {
+    const reviewSection = document.querySelector("#review");
+    if (reviewSection) {
+      setActiveLink(reviewSection.id);
       return;
     }
   }
@@ -43,7 +43,10 @@ const updateActiveOnScroll = () => {
   sections.forEach((section) => {
     const sectionTop = section.offsetTop - 120;
     const sectionHeight = section.offsetHeight;
-    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+    if (
+      window.scrollY >= sectionTop &&
+      window.scrollY < sectionTop + sectionHeight
+    ) {
       setActiveLink(section.id);
     }
   });
@@ -51,4 +54,3 @@ const updateActiveOnScroll = () => {
 
 window.addEventListener("scroll", updateActiveOnScroll);
 window.addEventListener("load", updateActiveOnScroll);
-

@@ -153,11 +153,6 @@ nav a.active span {
   display: inline-block;
 }
 
-/* === SECTION === */
-section {
-  /* min-height set per section */
-}
-
 /* === BUTTON === */
 .btn {
   background: var(--primary);
@@ -179,6 +174,7 @@ section {
   background: var(--tertiary);
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(147, 72, 39, 0.3);
+  border: 2px dashed rgba(250, 142, 54, 0.548);
 }
 
 .btn:active {
@@ -191,14 +187,14 @@ section {
   padding: 6px 14px;
 }
 
-/* === HERO === */
+/* === HERO (HOME SECTION) === */
 .hero {
   padding: 55px 0;
   overflow: hidden;
 }
 
 .hero-container {
-  min-height: 280px;
+  min-height: 250px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -210,9 +206,9 @@ section {
 
 .hero-heart {
   position: absolute;
-  left: -50px;
-  top: 20px;
-  color: var(--primary);
+  left: -60px;
+  top: 70px;
+  color: var(--peach);
   font-size: 24px;
 }
 
@@ -252,37 +248,37 @@ section {
   position: absolute;
   width: 70px;
   height: 70px;
-  background: var(--primary);
+  background: var(--peach);
   border-radius: 48% 52% 60% 40%;
-  left: 45px;
-  top: 5px;
+  left: -95px;
+  top: -10px;
   transform: rotate(-28deg);
 }
 
 .star {
   position: absolute;
   right: 55px;
-  top: 10px;
-  color: var(--primary);
+  top: -7px;
+  color: var(--peach);
   font-size: 37px;
 }
 
 .hero-slash {
   position: absolute;
   right: 0;
-  top: 70px;
+  top: 55px;
   width: 38px;
   height: 10px;
-  background: var(--primary);
+  background: var(--peach);
   transform: rotate(47deg);
 }
 
 .hero-product {
   position: absolute;
   right: 15px;
-  top: 50px;
+  top: 40px;
   width: 315px;
-  height: 200px;
+  height: 210px;
   overflow: hidden;
   border: 7px solid white;
   border-radius: 50%;
@@ -320,7 +316,7 @@ section {
   border: 2px solid var(--primary);
   color: var(--primary);
   right: 0;
-  top: 102px;
+  top: 92px;
   transform: rotate(8deg);
   box-shadow: 0 3px 0 var(--primary);
   animation: floating-crunchy 3s ease-in-out infinite;
@@ -376,7 +372,7 @@ section {
       transparent 2px,
       rgba(147, 72, 39, 0.03) 2px,
       rgba(147, 72, 39, 0.03) 4px);
-  padding: 50px 40px 60px;
+  padding: 10px 40px 60px;
   position: relative;
 }
 
@@ -471,6 +467,7 @@ section {
 }
 
 .varian-card {
+  top: -22px;
   background: var(--white);
   border-radius: 5px;
   padding: 0 22px 32px;
@@ -481,8 +478,6 @@ section {
     box-shadow 0.3s ease;
   position: relative;
   overflow: visible;
-
-  /* Memberi ruang untuk gambar yang keluar dari card */
   margin-top: 35px;
 }
 
@@ -490,7 +485,6 @@ section {
   transform: translateY(-5px);
   box-shadow: 0 8px 18px rgba(147, 72, 39, 0.14);
 }
-
 
 .varian-image {
   width: 102px;
@@ -516,8 +510,7 @@ section {
   display: block;
 }
 
-
-/* === CARD CONTENT === */
+/* === VARIAN CARD === */
 
 .varian-card-body {
   padding: 46px 0 0;
@@ -588,7 +581,8 @@ section {
 .btn-order:hover {
   background: var(--tertiary);
   transform: translateY(-3px);
-  box-shadow: 0 8px 16px rgba(147, 72, 39, 0.3);
+  box-shadow: 0 6px 12px rgba(147, 72, 39, 0.3);
+  border: 2px dashed rgba(250, 142, 54, 0.548);
 }
 
 .btn-order:active {
@@ -599,7 +593,7 @@ section {
 /* === ABOUT SECTION === */
 .about {
   min-height: unset;
-  padding: 60px 40px;
+  padding: 10px 40px;
   background: #fdf0e0;
   background-image: repeating-linear-gradient(90deg,
       transparent,
@@ -611,6 +605,7 @@ section {
 .about-inner {
   max-width: 900px;
   margin: 0 auto;
+  margin-bottom: 90px;
   display: flex;
   align-items: center;
   gap: 48px;
@@ -620,7 +615,7 @@ section {
   box-shadow: 0 4px 24px rgba(147, 72, 39, 0.08);
 }
 
-/* === FOTO POLAROID === */
+/* === POLAROID PHOTO === */
 .about-photo-wrap {
   flex-shrink: 0;
   position: relative;
@@ -659,7 +654,6 @@ section {
   display: block;
 }
 
-/* Garis bergerigi bawah foto (seperti kertas robek) */
 .about-photo::after {
   content: '';
   position: absolute;
@@ -675,7 +669,7 @@ section {
       96% 0%, 100% 100%, 100% 0%);
 }
 
-/* === KONTEN KANAN === */
+/* === RIGHT CONTENT === */
 .about-content {
   flex: 1;
   position: relative;
@@ -748,7 +742,7 @@ section {
   opacity: 0.6;
 }
 
-/* === DI BALIK TUKIES === */
+/* === TUKIES TEAM === */
 .team-wrapper {
   max-width: 960px;
   margin: 60px auto 0;
@@ -763,7 +757,6 @@ section {
   margin-bottom: 20px;
 }
 
-/* Starburst / dotted burst icon decoration on header */
 .dot-burst {
   width: 24px;
   height: 24px;
@@ -808,7 +801,7 @@ section {
   border: 1px solid #f0dfcb;
   border-radius: 10px;
   padding: 14px 28px;
-  max-width: 620px;
+  max-width: 520px;
   margin: 0 auto 45px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(147, 72, 39, 0.05);
@@ -823,7 +816,7 @@ section {
   font-weight: 500;
 }
 
-/* === TEAM GRID (POLAROID CARDS) === */
+/* === POLAROID CARDS === */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -831,7 +824,6 @@ section {
   align-items: start;
 }
 
-/* Polaroid Card Outer Frame */
 .team-card {
   background: #ffffff;
   padding: 14px 14px 22px 14px;
@@ -842,7 +834,6 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Subtle Polaroid rotations for natural look */
 .team-grid .team-card:nth-child(1) { transform: rotate(-1.5deg); }
 .team-grid .team-card:nth-child(2) { transform: rotate(1deg); }
 .team-grid .team-card:nth-child(3) { transform: rotate(-1deg); }
@@ -854,7 +845,6 @@ section {
   z-index: 10;
 }
 
-/* Washi tape on top center */
 .team-tape {
   position: absolute;
   top: -10px;
@@ -868,7 +858,6 @@ section {
   z-index: 5;
 }
 
-/* Photo Container inside Polaroid (Orange background + White Sunburst) */
 .team-photo-box {
   width: 100%;
   height: 190px;
@@ -883,7 +872,6 @@ section {
   border-radius: 2px;
 }
 
-/* Person photo inside photo box */
 .team-photo {
   width: 100%;
   height: 100%;
@@ -895,7 +883,6 @@ section {
   display: block;
 }
 
-/* Polaroid Text Area */
 .team-info {
   padding-top: 16px;
   display: flex;
@@ -907,16 +894,27 @@ section {
 
 .team-name {
   font-family: "Fredoka", sans-serif;
-  font-size: 14.5px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--tertiary);
-  line-height: 1.25;
-  margin: 0 0 8px 0;
+  line-height: 1.20;
+  margin: 0 0 5px 0;
 }
 
 .team-role {
   font-family: "Poppins", sans-serif;
-  font-size: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.team-desc {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
   font-weight: 700;
   color: var(--primary);
   letter-spacing: 0.3px;
@@ -1033,7 +1031,7 @@ section {
   font-weight: 400;
 }
 
-/* === BOTTOM DASHED DIVIDER === */
+/* === LINE DIVIDER === */
 .about-dashed-divider {
   width: 100%;
   margin: 65px 0 20px;
@@ -1085,7 +1083,6 @@ section {
   box-shadow: 0 4px 0 rgba(147, 72, 39, 0.2);
 }
 
-/* Layout Showcase */
 .review-showcase {
   max-width: 1020px;
   margin: 0 auto;
@@ -1101,7 +1098,6 @@ section {
   gap: 20px;
 }
 
-/* Review Bubbles */
 .review-bubble {
   padding: 16px 20px;
   position: relative;
@@ -1122,7 +1118,6 @@ section {
   box-shadow: 0 8px 20px rgba(147, 72, 39, 0.12);
 }
 
-/* Chat Bubble Tails - Left Column (Pointing Right) */
 .review-col-left .review-bubble::after {
   content: '';
   position: absolute;
@@ -1149,7 +1144,6 @@ section {
   z-index: 1;
 }
 
-/* Chat Bubble Tails - Right Column (Pointing Left) */
 .review-col-right .review-bubble::after {
   content: '';
   position: absolute;
@@ -1176,7 +1170,6 @@ section {
   z-index: 1;
 }
 
-/* Tail color matching */
 .review-col-left .bubble-green::after { border-left-color: #eaf7ed; }
 .review-col-left .bubble-green::before { border-left-color: #a8e6b8; }
 .review-col-left .bubble-cream::after { border-left-color: #ffffff; }
@@ -1207,7 +1200,6 @@ section {
   font-weight: 500;
 }
 
-/* Bubble Color Variations */
 .bubble-green {
   background: #eaf7ed;
   border: 1.5px solid #a8e6b8;
@@ -1226,7 +1218,6 @@ section {
   color: var(--tertiary);
 }
 
-/* Review Photo */
 .review-photo-wrap {
   position: relative;
   display: flex;
@@ -1285,7 +1276,7 @@ section {
   transform: rotate(15deg);
 }
 
-/* === CTA BANNER SECTION === */
+/* === CTA SECTION === */
 .cta-banner {
   background: var(--primary);
   position: relative;
@@ -1294,7 +1285,6 @@ section {
   margin-top: 20px;
 }
 
-/* Sawtooth / Zig-zag top border decoration */
 .cta-sawtooth-top {
   position: absolute;
   top: -1px;
@@ -1378,13 +1368,13 @@ section {
 }
 
 .btn-cta:hover {
-  background: #ffffff;
-  color: var(--tertiary);
+  background: var(--tertiary);
   transform: translateY(-3px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(147, 72, 39, 0.3);
+  border: 2px dashed var(--secondary);
+  color: var(--secondary);
 }
 
-/* Photo Right */
 .cta-photo-wrap {
   position: relative;
   flex-shrink: 0;
@@ -1427,10 +1417,10 @@ section {
 
 .cta-heart-decor {
   position: absolute;
-  right: -30px;
+  right: -15px;
   top: 50%;
-  transform: translateY(-50%);
-  color: #fff8ef;
+  transform: translateY(-40%);
+  color: var(--tertiary);
   font-size: 34px;
   opacity: 0.95;
 }
