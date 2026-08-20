@@ -771,7 +771,7 @@ nav a.active span {
   width: 0;
   height: 0;
   border-radius: 50%;
-  box-shadow: 
+  box-shadow:
     0 -10px 0 1.5px var(--tertiary),
     7px -7px 0 1.5px var(--tertiary),
     10px 0 0 1.5px var(--tertiary),
@@ -801,7 +801,7 @@ nav a.active span {
   border-radius: 10px;
   padding: 14px 28px;
   max-width: 520px;
-  margin: 0 auto 45px;
+  margin: 0 auto 25px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(147, 72, 39, 0.05);
 }
@@ -833,10 +833,21 @@ nav a.active span {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.team-grid .team-card:nth-child(1) { transform: rotate(-1.5deg); }
-.team-grid .team-card:nth-child(2) { transform: rotate(1deg); }
-.team-grid .team-card:nth-child(3) { transform: rotate(-1deg); }
-.team-grid .team-card:nth-child(4) { transform: rotate(1.5deg); }
+.team-grid .team-card:nth-child(1) {
+  transform: rotate(-1.5deg);
+}
+
+.team-grid .team-card:nth-child(2) {
+  transform: rotate(1deg);
+}
+
+.team-grid .team-card:nth-child(3) {
+  transform: rotate(-1deg);
+}
+
+.team-grid .team-card:nth-child(4) {
+  transform: rotate(1.5deg);
+}
 
 .team-card:hover {
   transform: translateY(-8px) rotate(0deg) scale(1.02) !important;
@@ -861,11 +872,9 @@ nav a.active span {
   width: 100%;
   height: 190px;
   background-color: var(--primary);
-  background-image: repeating-conic-gradient(
-    from 0deg at 50% 50%,
-    rgba(255, 255, 255, 0.95) 0deg 11.25deg,
-    transparent 11.25deg 22.5deg
-  );
+  background-image: repeating-conic-gradient(from 0deg at 50% 50%,
+      rgba(255, 255, 255, 0.95) 0deg 11.25deg,
+      transparent 11.25deg 22.5deg);
   position: relative;
   overflow: hidden;
   border-radius: 2px;
@@ -1169,19 +1178,53 @@ nav a.active span {
   z-index: 1;
 }
 
-.review-col-left .bubble-green::after { border-left-color: #eaf7ed; }
-.review-col-left .bubble-green::before { border-left-color: #a8e6b8; }
-.review-col-left .bubble-cream::after { border-left-color: #ffffff; }
-.review-col-left .bubble-cream::before { border-left-color: #f0dfcb; }
-.review-col-left .bubble-orange::after { border-left-color: #fff6ee; }
-.review-col-left .bubble-orange::before { border-left-color: #f7cbb0; }
+.review-col-left .bubble-green::after {
+  border-left-color: #eaf7ed;
+}
 
-.review-col-right .bubble-green::after { border-right-color: #eaf7ed; }
-.review-col-right .bubble-green::before { border-right-color: #a8e6b8; }
-.review-col-right .bubble-cream::after { border-right-color: #ffffff; }
-.review-col-right .bubble-cream::before { border-right-color: #f0dfcb; }
-.review-col-right .bubble-orange::after { border-right-color: #fff6ee; }
-.review-col-right .bubble-orange::before { border-right-color: #f7cbb0; }
+.review-col-left .bubble-green::before {
+  border-left-color: #a8e6b8;
+}
+
+.review-col-left .bubble-cream::after {
+  border-left-color: #ffffff;
+}
+
+.review-col-left .bubble-cream::before {
+  border-left-color: #f0dfcb;
+}
+
+.review-col-left .bubble-orange::after {
+  border-left-color: #fff6ee;
+}
+
+.review-col-left .bubble-orange::before {
+  border-left-color: #f7cbb0;
+}
+
+.review-col-right .bubble-green::after {
+  border-right-color: #eaf7ed;
+}
+
+.review-col-right .bubble-green::before {
+  border-right-color: #a8e6b8;
+}
+
+.review-col-right .bubble-cream::after {
+  border-right-color: #ffffff;
+}
+
+.review-col-right .bubble-cream::before {
+  border-right-color: #f0dfcb;
+}
+
+.review-col-right .bubble-orange::after {
+  border-right-color: #fff6ee;
+}
+
+.review-col-right .bubble-orange::before {
+  border-right-color: #f7cbb0;
+}
 
 .review-stars {
   color: #f5b731;
@@ -1291,17 +1334,15 @@ nav a.active span {
   width: 100%;
   height: 20px;
   background: var(--secondary);
-  clip-path: polygon(
-    0% 0%, 2% 100%, 4% 0%, 6% 100%, 8% 0%, 10% 100%,
-    12% 0%, 14% 100%, 16% 0%, 18% 100%, 20% 0%, 22% 100%,
-    24% 0%, 26% 100%, 28% 0%, 30% 100%, 32% 0%, 34% 100%,
-    36% 0%, 38% 100%, 40% 0%, 42% 100%, 44% 0%, 46% 100%,
-    48% 0%, 50% 100%, 52% 0%, 54% 100%, 56% 0%, 58% 100%,
-    60% 0%, 62% 100%, 64% 0%, 66% 100%, 68% 0%, 70% 100%,
-    72% 0%, 74% 100%, 76% 0%, 78% 100%, 80% 0%, 82% 100%,
-    84% 0%, 86% 100%, 88% 0%, 90% 100%, 92% 0%, 94% 100%,
-    96% 0%, 98% 100%, 100% 0%
-  );
+  clip-path: polygon(0% 0%, 2% 100%, 4% 0%, 6% 100%, 8% 0%, 10% 100%,
+      12% 0%, 14% 100%, 16% 0%, 18% 100%, 20% 0%, 22% 100%,
+      24% 0%, 26% 100%, 28% 0%, 30% 100%, 32% 0%, 34% 100%,
+      36% 0%, 38% 100%, 40% 0%, 42% 100%, 44% 0%, 46% 100%,
+      48% 0%, 50% 100%, 52% 0%, 54% 100%, 56% 0%, 58% 100%,
+      60% 0%, 62% 100%, 64% 0%, 66% 100%, 68% 0%, 70% 100%,
+      72% 0%, 74% 100%, 76% 0%, 78% 100%, 80% 0%, 82% 100%,
+      84% 0%, 86% 100%, 88% 0%, 90% 100%, 92% 0%, 94% 100%,
+      96% 0%, 98% 100%, 100% 0%);
   z-index: 10;
 }
 
@@ -1426,7 +1467,8 @@ nav a.active span {
 
 /* === FOOTER SECTION === */
 .footer {
-  background: #4a2b16; /* dark chocolate brown */
+  background: #4a2b16;
+  /* dark chocolate brown */
   position: relative;
   padding: 45px 0 35px;
   color: #ffffff;
@@ -1520,9 +1562,7 @@ nav a.active span {
 
 
 
-/* =============================================
-   HAMBURGER MENU (MOBILE)
-   ============================================= */
+/* === HAMBURGER MENU (MOBILE) === */
 .nav-hamburger {
   display: none;
   flex-direction: column;
@@ -1562,14 +1602,10 @@ nav a.active span {
   transform: translateY(-7.5px) rotate(-45deg);
 }
 
-/* =============================================
-   RESPONSIVE — TABLET (768px – 1023px)
-   ============================================= */
+/* === RESPONSIVE — TABLET (768px – 1023px) === */
 @media (max-width: 1023px) {
-
-  /* Container */
   .container {
-    width: calc(100% - 48px);
+    width: calc(100% - 98px);
     padding: 0;
   }
 
@@ -1577,7 +1613,6 @@ nav a.active span {
     width: calc(100% - 48px);
   }
 
-  /* Hero */
   .hero {
     padding: 40px 0 20px;
   }
@@ -1613,19 +1648,41 @@ nav a.active span {
 
   .tasty {
     left: 110px;
-    bottom: 40px;
+    bottom: 70px;
   }
 
   .crunchy {
-    right: 0;
+    right: -20px;
     top: 75px;
+  }
+
+  .hero-heart {
+    left: -38px;
+    top: 70px;
+  }
+
+  .hero-blob {
+    left: -35px;
+    top: -25px;
+  }
+
+  .star {
+    right: calc(55% - 160px);
+    top: -12px;
+    font-size: 26px;
+  }
+
+  .hero-slash {
+    right: calc(44% - 160px);
+    top: 35px;
+    width: 24px;
+    height: 8px;
   }
 
   .wave {
     margin-top: 60px;
   }
 
-  /* Varian */
   .varian {
     padding: 10px 24px 50px;
   }
@@ -1635,7 +1692,6 @@ nav a.active span {
     gap: 14px;
   }
 
-  /* About */
   .about {
     padding: 10px 24px;
   }
@@ -1654,7 +1710,6 @@ nav a.active span {
     height: 130px;
   }
 
-  /* Team */
   .team-wrapper {
     padding: 0 24px 40px;
   }
@@ -1672,38 +1727,41 @@ nav a.active span {
     font-size: 15px;
   }
 
-  /* P2MW */
   .p2mw-box {
     padding: 24px 28px;
     gap: 28px;
     margin: 40px auto 0;
   }
 
-  /* Review */
   .review {
     padding: 50px 24px 60px;
   }
 
   .review-showcase {
+    margin-top: -30px;
     grid-template-columns: 1fr 220px 1fr;
     gap: 28px;
+  }
+
+  .review-bubble p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 500;
   }
 
   .review-polaroid img {
     height: 150px;
   }
 
-  /* CTA */
   .cta-text h2 {
     font-size: 34px;
   }
 
-  /* Footer */
   .footer {
     padding: 38px 0 28px;
   }
 }
-
 
 /* === RESPONSIVE — MOBILE (max-width: 767px) === */
 @media (max-width: 767px) {
@@ -1712,7 +1770,6 @@ nav a.active span {
     padding: 0;
   }
 
-  /* === NAVBAR === */
   .navbar {
     height: 60px;
   }
@@ -1753,8 +1810,15 @@ nav a.active span {
   }
 
   @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   nav a {
@@ -1825,14 +1889,14 @@ nav a.active span {
   }
 
   .star {
-    right: calc(50% - 160px);
-    top: -6px;
+    right: calc(62% - 160px);
+    top: -12px;
     font-size: 26px;
   }
 
   .hero-slash {
-    right: calc(50% - 160px);
-    top: 46px;
+    right: calc(54% - 160px);
+    top: 35px;
     width: 24px;
     height: 8px;
   }
@@ -1849,23 +1913,23 @@ nav a.active span {
   }
 
   .tasty {
-    left: calc(50% - 148px);
-    bottom: 24px;
+    left: calc(60% - 148px);
+    bottom: 104px;
     top: auto;
     font-size: 12px;
     padding: 5px 11px;
   }
 
   .crunchy {
-    right: calc(50% - 178px);
+    right: calc(60% - 178px);
     left: auto;
-    top: 72px;
+    top: 62px;
     font-size: 12px;
     padding: 5px 11px;
   }
 
   .wave {
-    margin-top: 30px;
+    margin-top: -30px;
     height: 70px;
   }
 
@@ -1886,11 +1950,11 @@ nav a.active span {
   .varian-grid {
     grid-template-columns: 1fr;
     gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
   .varian-card {
-    margin-top: 52px;
+    margin-top: 42px;
     padding: 0 18px 24px;
   }
 
@@ -2081,6 +2145,16 @@ nav a.active span {
     padding: 55px 0 60px;
   }
 
+  .cta-sawtooth-top {
+    height: 22px;
+    clip-path: polygon(
+      0% 0%, 12% 100%, 25% 0%,
+      38% 100%, 50% 0%,
+      63% 100%, 75% 0%,
+      88% 100%, 100% 0%
+    );
+  }
+
   .cta-container {
     flex-direction: column;
     align-items: center;
@@ -2093,7 +2167,7 @@ nav a.active span {
   }
 
   .cta-star-doodle {
-    left: 0;
+    left: -10px;
     top: -20px;
   }
 
@@ -2160,13 +2234,26 @@ nav a.active span {
   }
 
   .tasty {
-    left: calc(50% - 128px);
-    bottom: 30px;
+    left: calc(65% - 148px);
+    bottom: 124px;
+    top: auto;
   }
 
   .crunchy {
-    right: calc(50% - 150px);
-    top: 66px;
+    right: calc(60% - 150px);
+    top: 53px;
+  }
+
+  .wave {
+    margin-top: -50px;
+  }
+
+  .varian-grid {
+    gap: 32px;
+  }
+
+  .team-title-banner {
+    font-size: 18px;
   }
 
   .team-grid {
@@ -2183,7 +2270,21 @@ nav a.active span {
     height: 130px;
   }
 
-  .varian-grid {
-    gap: 54px;
+  .cta-sawtooth-top {
+    height: 22px;
+    clip-path: polygon(
+      0% 0%, 12% 100%, 25% 0%,
+      38% 100%, 50% 0%,
+      63% 100%, 75% 0%,
+      88% 100%, 100% 0%
+    );
+  }
+
+  .review-title-group h2 {
+    font-size: 18px;
+  }
+
+  .cta-star-doodle {
+    left: -10px;
   }
 }
