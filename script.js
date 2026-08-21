@@ -10,12 +10,13 @@ const setActiveLink = (id) => {
   });
 };
 
-// Smooth Programmatic Scroll with Custom Easing (no abrupt jumps)
-let currentScrollAnimId = null;
+// Smooth Programmatic Scroll: Langsung meluncur di milidetik pertama, pelan, anggun & lembut
+let scrollAnimId = null;
 
-const smoothScrollTo = (targetY, duration = 800) => {
-  if (currentScrollAnimId) {
-    cancelAnimationFrame(currentScrollAnimId);
+const smoothScrollTo = (targetY, duration = 1050) => {
+  if (scrollAnimId) {
+    cancelAnimationFrame(scrollAnimId);
+    scrollAnimId = null;
   }
 
   const startY = window.pageYOffset || document.documentElement.scrollTop;
@@ -24,41 +25,42 @@ const smoothScrollTo = (targetY, duration = 800) => {
 
   let startTime = null;
 
-  // Cubic Bezier Easing (easeInOutCubic): gentle ramp up, silky coast, soft deceleration
-  const easeInOutCubic = (t) => {
-    return t < 0.5
-      ? 4 * t * t * t
-      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  // easeOutCubic: Kecepatan awal langsung aktif (0ms lag), meluncur pelan dan mendarat sangat lembut
+  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+  const cleanupListeners = () => {
+    window.removeEventListener('wheel', cancelOnUserInteraction);
+    window.removeEventListener('touchmove', cancelOnUserInteraction);
   };
+
+  const cancelOnUserInteraction = () => {
+    if (scrollAnimId) {
+      cancelAnimationFrame(scrollAnimId);
+      scrollAnimId = null;
+    }
+    cleanupListeners();
+  };
+
+  window.addEventListener('wheel', cancelOnUserInteraction, { passive: true });
+  window.addEventListener('touchmove', cancelOnUserInteraction, { passive: true });
 
   const step = (currentTime) => {
     if (!startTime) startTime = currentTime;
     const timeElapsed = currentTime - startTime;
     const progress = Math.min(timeElapsed / duration, 1);
-    const ease = easeInOutCubic(progress);
+    const ease = easeOutCubic(progress);
 
     window.scrollTo(0, startY + distance * ease);
 
     if (timeElapsed < duration) {
-      currentScrollAnimId = requestAnimationFrame(step);
+      scrollAnimId = requestAnimationFrame(step);
     } else {
-      currentScrollAnimId = null;
+      scrollAnimId = null;
+      cleanupListeners();
     }
   };
 
-  // Allow user to break out of programmatic smooth scroll by scrolling manually
-  const cancelOnUserAction = () => {
-    if (currentScrollAnimId) {
-      cancelAnimationFrame(currentScrollAnimId);
-      currentScrollAnimId = null;
-    }
-    window.removeEventListener('wheel', cancelOnUserAction);
-    window.removeEventListener('touchmove', cancelOnUserAction);
-  };
-  window.addEventListener('wheel', cancelOnUserAction, { passive: true, once: true });
-  window.addEventListener('touchmove', cancelOnUserAction, { passive: true, once: true });
-
-  currentScrollAnimId = requestAnimationFrame(step);
+  scrollAnimId = requestAnimationFrame(step);
 };
 
 // Attach smooth scroll to all internal anchor links
@@ -74,15 +76,16 @@ const initSmoothScrollLinks = () => {
       if (targetSection) {
         event.preventDefault();
 
-        const navbar = document.querySelector(".navbar");
-        const navHeight = navbar ? navbar.offsetHeight : 70;
-        const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - (navHeight - 12);
-
-        smoothScrollTo(Math.max(0, targetPosition), 800);
-
         if (targetId.startsWith("#")) {
           setActiveLink(targetId.replace("#", ""));
         }
+
+        const navbar = document.querySelector(".navbar");
+        const navHeight = navbar ? navbar.offsetHeight : 70;
+        const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - (navHeight - 10);
+
+        // Durasi 1050ms agar scrolling meluncur pelan, santai, dan anggun
+        smoothScrollTo(Math.max(0, targetPosition), 1050);
       }
     });
   });
@@ -177,10 +180,7 @@ const initScrollReveal = () => {
       rootMargin: '0px 0px -30px 0px'
     });
 
-    // Small timeout on load so initial hero elements animate gracefully into view
-    setTimeout(() => {
-      revealElements.forEach(el => revealObserver.observe(el));
-    }, 60);
+    revealElements.forEach(el => revealObserver.observe(el));
   } else {
     // Fallback for older browsers
     revealElements.forEach(el => el.classList.add('visible'));
