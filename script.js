@@ -84,3 +84,37 @@ if (navToggle && navMenu) {
     }
   });
 }
+
+// === SCROLL REVEAL ANIMATION (INTERSECTION OBSERVER) ===
+const initScrollReveal = () => {
+  const revealElements = document.querySelectorAll('.reveal');
+
+  if (!revealElements.length) return;
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    // Fallback for older browsers
+    revealElements.forEach(el => el.classList.add('visible'));
+  }
+};
+
+// Initialize scroll reveal on DOM load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initScrollReveal);
+} else {
+  initScrollReveal();
+}
