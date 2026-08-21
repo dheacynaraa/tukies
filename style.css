@@ -18,26 +18,34 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 75px;
 }
 
-/* === SCROLL REVEAL ANIMATION === */
+/* === SCROLL REVEAL ANIMATION (ULTRA SMOOTH & ORGANIC) === */
 .reveal {
   opacity: 0;
-  transform: translateY(35px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(30px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) !important;
   will-change: opacity, transform;
+  backface-visibility: hidden;
 }
 
 .reveal.reveal-left {
-  transform: translateX(-40px);
+  transform: translateX(-35px) translateY(0);
 }
 
 .reveal.reveal-right {
-  transform: translateX(40px);
+  transform: translateX(35px) translateY(0);
 }
 
 .reveal.reveal-scale {
-  transform: translateY(20px) scale(0.92);
+  transform: translateY(24px) scale(0.95);
+}
+
+.reveal.reveal-fade {
+  transform: translateY(0);
 }
 
 .reveal.visible {
@@ -45,18 +53,25 @@ html {
   transform: translate(0, 0) scale(1);
 }
 
-/* Stagger delays */
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
+.reveal.visible:hover {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1) !important,
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* Stagger Delays - Cascading rhythm */
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.24s; }
+.delay-3 { transition-delay: 0.36s; }
+.delay-4 { transition-delay: 0.48s; }
+.delay-5 { transition-delay: 0.60s; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal.reveal-left,
   .reveal.reveal-right,
-  .reveal.reveal-scale {
+  .reveal.reveal-scale,
+  .team-grid .team-card.reveal {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
@@ -64,26 +79,24 @@ html {
 }
 
 @keyframes floating-tasty {
-
   0%,
   100% {
     transform: rotate(-7deg) translateY(0px);
   }
 
   50% {
-    transform: rotate(-7deg) translateY(-12px);
+    transform: rotate(-7deg) translateY(-8px);
   }
 }
 
 @keyframes floating-crunchy {
-
   0%,
   100% {
     transform: rotate(8deg) translateY(0px);
   }
 
   50% {
-    transform: rotate(8deg) translateY(-12px);
+    transform: rotate(8deg) translateY(-8px);
   }
 }
 
@@ -352,7 +365,7 @@ nav a.active span {
   bottom: 50px;
   transform: rotate(-7deg);
   box-shadow: 0 3px 0 var(--tertiary);
-  animation: floating-tasty 3s ease-in-out infinite;
+  animation: floating-tasty 4s ease-in-out infinite;
 }
 
 .crunchy {
@@ -362,7 +375,7 @@ nav a.active span {
   top: 92px;
   transform: rotate(8deg);
   box-shadow: 0 3px 0 var(--primary);
-  animation: floating-crunchy 3s ease-in-out infinite;
+  animation: floating-crunchy 4s ease-in-out infinite;
 }
 
 .wave {
@@ -517,8 +530,8 @@ nav a.active span {
   text-align: left;
   box-shadow: 0 3px 10px rgba(147, 72, 39, 0.08);
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   overflow: visible;
   margin-top: 35px;
@@ -873,23 +886,35 @@ nav a.active span {
   box-shadow: 0 8px 24px rgba(147, 72, 39, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06);
   position: relative;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .team-grid .team-card:nth-child(1) {
-  transform: rotate(-1.5deg);
+  --team-rot: -1.5deg;
 }
 
 .team-grid .team-card:nth-child(2) {
-  transform: rotate(1deg);
+  --team-rot: 1deg;
 }
 
 .team-grid .team-card:nth-child(3) {
-  transform: rotate(-1deg);
+  --team-rot: -1deg;
 }
 
 .team-grid .team-card:nth-child(4) {
-  transform: rotate(1.5deg);
+  --team-rot: 1.5deg;
+}
+
+.team-grid .team-card {
+  transform: rotate(var(--team-rot, 0deg));
+}
+
+.team-grid .team-card.reveal {
+  transform: translateY(32px) scale(0.94) rotate(var(--team-rot, 0deg));
+}
+
+.team-grid .team-card.reveal.visible {
+  transform: translateY(0) scale(1) rotate(var(--team-rot, 0deg));
 }
 
 .team-card:hover {
@@ -1153,7 +1178,7 @@ nav a.active span {
   padding: 16px 20px;
   position: relative;
   box-shadow: 0 4px 14px rgba(147, 72, 39, 0.07);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .review-col-left .review-bubble {
